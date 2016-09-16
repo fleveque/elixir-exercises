@@ -21,4 +21,13 @@ defmodule MyList do
     tail_max = max(tail)
     if (head > tail_max), do: head, else: tail_max
   end
+
+  def caesar([], _), do: []
+  def caesar([ head | tail ], n) when head + n <= ?z do
+    [ head+n | caesar(tail, n) ]
+  end
+  def caesar([ head | tail ], n) do
+    [ head + n - 26 | caesar(tail, n) ]
+  end
+
 end
