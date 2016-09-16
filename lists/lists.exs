@@ -15,4 +15,10 @@ defmodule MyList do
   def mapsum([head | tail], func) do
     func.(head) + mapsum(tail, func)
   end
+
+  def max([]), do: 0
+  def max([head | tail]) do
+    tail_max = max(tail)
+    if (head > tail_max), do: head, else: tail_max
+  end
 end
