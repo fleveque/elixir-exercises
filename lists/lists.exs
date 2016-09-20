@@ -30,4 +30,10 @@ defmodule MyList do
     [ head + n - 26 | caesar(tail, n) ]
   end
 
+  def span(to, to) do
+    [to]
+  end
+  def span(from, to) when from < to do
+    [from | span(from + 1, to)]
+  end
 end
